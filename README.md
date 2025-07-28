@@ -1,17 +1,67 @@
-This project was an ambitious plan of leveraging Time Series analysis through Python. I tried to incorporate the knowledge I have gain through my Time Series Econometrics course and 
-execute it via a new language I began to speak, aka Python. The initial question of interest was whether it is possible to successfully predict conflict event occurrence by looking 
-at the past events alone. I was interested on how depending on the data and country my modeling technique would change. Overall, this project had a rather exploratory character, 
-where I wanted to investigate the data, transform it if necessary and find the best fitting model that can be potentially used for out-of- sample forecasting. Out of 4 African countries 
-I have selected that are currently involved in civil conflict, I demonstrated the full Box-Jenkins approach for two of them, namely Ethiopia and Somalia. 
-The results were quite interesting as the first model on Ethiopia did not perform as great for out-of-sample forecasting, while Somalia did a much better job in predicting the events.
+# **Time Series Analysis of Civil Conflict: Africa (ARIMA Modeling)**  
 
-The project mainly consisted of 2 parts: data cleaning and Box-Jenkins ARIMA approach that comprised of 3 separate parts. 
-The data cleaning and EDA part included all 4 countries for the demonstration purposes, however the final product only had 2 countries that showed the entire process from the beginning 
-till the end. The final best models were capable of out-of-sample forecasting which was an ambitious beginning given that we are only using past data to predict current or 
-future without any additional features. This showed that despite its parsimony, simple ARIMA model is capable of strong forecasting performance.
+![Language](https://img.shields.io/badge/language-Python-blue.svg)
+![Status](https://img.shields.io/badge/status-complete-blue.svg)
+![License](https://img.shields.io/badge/license-academic-green.svg)
 
-This project can be extended in numerous ways. Given that I only did a full analysis for 2 separate countries independent of each other, I could have seen whether there exists a 
-relationship between multiple different time series, hinting on the long run equilibrium relationship using the models such as Cointegration. This is an extremely interesting application, 
-showing that not only past data affects the current, but other separate time series have an effect on each other. This is extremely powerful and has impactful implications. 
-In addition, I could expand the given ARIMA model to ARIMAX, which adds exogenous X variables to increase the explanatory power of the models.
+## **Overview**  
+This repository documents an exploratory project in applying **time series analysis** to civil conflict event data in Africa. The goal was to investigate whether historical patterns in conflict data alone could be used to predict future events, using **Box-Jenkins ARIMA modeling**.  
+
+The analysis focused on four African countries experiencing civil conflict, with a **full end-to-end modeling process demonstrated for Ethiopia and Somalia**.  
+
+### **Key Insights**  
+- Out-of-sample forecasting performance varied by country:
+  - **Somalia:** ARIMA(3,1,0) performed well with low RMSE values.  
+  - **Ethiopia:** ARIMA(1,1,1) was the best fit but less effective in forecasting.  
+- Results demonstrate that **simple ARIMA models can deliver strong forecasting accuracy** even when relying solely on past events, though predictive performance is highly country-dependent.  
+
+---
+
+## **Repository Structure**  
+
+```
+├── data/
+│ ├── Ethiopia.csv
+│ └── Somalia.csv
+│
+├── notebooks/
+│ └── africa-time-series.ipynb
+│
+└── output/
+└── IST 341_Final Presentation_Zhamilia Klycheva(Jama).pdf
+```
+
+- **data/** – Monthly time series event counts for Ethiopia and Somalia (subset of ACLED conflict event data).  
+- **notebooks/** – Jupyter Notebook implementing data cleaning, exploratory data analysis (EDA), and ARIMA modeling.  
+- **output/** – Final project presentation summarizing results and methodology.  
+
+---
+
+## **Data & Methodology**  
+- **Data source:** Armed Conflict Location Event Data Project (ACLED).  
+- Each country’s data was grouped at a **monthly frequency**, removing non-violent events.  
+- The **Box-Jenkins ARIMA approach** was applied:
+  1. Model identification (ACF/PACF plots, differencing)  
+  2. Parameter estimation and evaluation using AIC/BIC  
+  3. Diagnostic checks and rolling forecast evaluation  
+
+---
+
+## **Future Extensions**  
+- Extend analysis beyond univariate ARIMA by exploring:
+  - **Cointegration models:** Test long-term equilibrium relationships between conflict series across countries.  
+  - **ARIMAX models:** Include exogenous variables (e.g., socio-economic or political factors) to improve explanatory power.  
+- Expand full analysis to all four African countries studied during the EDA phase.  
+
+---
+
+## **Notes**  
+- This was a **school project** for a time series analysis class (IST 341) and is provided for **academic reference only**.  
+- The repository is marked as **complete** and will not be updated.  
+
+---
+
+## **License**  
+This project is available for academic and educational purposes only.  
+
 
